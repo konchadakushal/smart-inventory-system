@@ -1,0 +1,92 @@
+.toast-portal-container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 9999;
+  pointer-events: none; /* Make clicks pass through container gaps */
+  width: 100%;
+  max-width: 350px;
+}
+
+.toast-item {
+  pointer-events: auto; /* Re-enable clicks on toast box */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  color: var(--text-primary);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.4;
+  position: relative;
+  overflow: hidden;
+  animation: slideInToast 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInToast {
+  from { transform: translateX(120%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Accent side highlights */
+.toast-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.toast-success::before { background-color: var(--color-success); }
+.toast-error::before { background-color: var(--color-danger); }
+.toast-warning::before { background-color: var(--color-warning); }
+.toast-info::before { background-color: var(--color-info); }
+
+.toast-icon-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toast-icon-side svg {
+  width: 18px;
+  height: 18px;
+}
+
+.toast-success .toast-icon-side svg { color: var(--color-success); }
+.toast-error .toast-icon-side svg { color: var(--color-danger); }
+.toast-warning .toast-icon-side svg { color: var(--color-warning); }
+.toast-info .toast-icon-side svg { color: var(--color-info); }
+
+.toast-message-body {
+  flex: 1;
+}
+
+.toast-dismiss-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-fast);
+}
+
+.toast-dismiss-btn:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+}

@@ -1,0 +1,56 @@
+.unauth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 24px;
+  font-family: var(--font-family);
+}
+
+.unauth-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  padding: 48px 32px;
+  border-radius: var(--border-radius-lg);
+  max-width: 460px;
+  width: 100%;
+}
+
+.unauth-shield-icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-danger);
+  background: rgba(239, 68, 68, 0.05);
+  border: 1.5px solid rgba(239, 68, 68, 0.15);
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.unauth-shield-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.unauth-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.unauth-message {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.unauth-actions {
+  display: flex;
+  justify-content: center;
+}

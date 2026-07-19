@@ -1,0 +1,146 @@
+.stock-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 992px) {
+  .stock-layout {
+    grid-template-columns: 320px 1fr;
+  }
+}
+
+/* Left panel: Warehouses deck */
+.warehouses-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.warehouse-compact-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.warehouse-compact-card:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.warehouse-compact-card.active {
+  background-color: rgba(59, 130, 246, 0.06);
+  border-color: var(--color-primary);
+}
+
+.warehouse-compact-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.warehouse-compact-loc {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.warehouse-compact-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  align-self: flex-start;
+  background-color: rgba(255, 255, 255, 0.04);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Capacity progress bar gauge */
+.capacity-progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.capacity-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.capacity-progress-bar {
+  height: 6px;
+  background-color: var(--bg-input);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.capacity-progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.4s ease-out;
+}
+
+.fill-ok { background-color: var(--color-success); }
+.fill-warning { background-color: var(--color-warning); }
+.fill-full { background-color: var(--color-danger); }
+
+/* Right panel: Active warehouse inventory sheet */
+.inventory-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inventory-header-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .inventory-header-panel {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.inventory-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inventory-header-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.inventory-header-loc {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.inventory-action-group {
+  display: flex;
+  gap: 12px;
+}
